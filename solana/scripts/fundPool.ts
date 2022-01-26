@@ -39,7 +39,7 @@ const fundPool = async (
 
   const rawAmount = poolAccountInfo.getFundAmount(
     amountPerWeek,
-    mint.data.decimals,
+    9,
     config.numMint
   );
 

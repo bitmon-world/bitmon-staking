@@ -345,7 +345,7 @@ const ManagePoolPage = () => {
               </HStack>
               <Text textAlign={"right"} fontSize="18" fontWeight={600}>
                 {`${fromRawAmount(
-                  rewardToken.decimals,
+                  9,
                   userAccount.data.rewardEarnedClaimed.toNumber()
                 )}`}
               </Text>

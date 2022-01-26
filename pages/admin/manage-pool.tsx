@@ -178,7 +178,7 @@ const ManagePoolPage = () => {
     return pool
       .getFundAmountDisplay(
         amountPerWeek,
-        rewardMintInfo.decimals,
+        9,
         config.data.numMint
       )
       .toString();

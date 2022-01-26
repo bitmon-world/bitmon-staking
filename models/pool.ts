@@ -62,7 +62,7 @@ export class Pool extends BaseAnchorAccount<PoolAccount> {
         .mul(new BN(numMints))
         .div(U64_MAX);
     }
-    const fundAmount = new BN(10 ** decimals * amountPerWeek)
+    const fundAmount = new BN(10 ** 9 * amountPerWeek)
       .mul(this.data.rewardDuration)
       .mul(new BN(numMints))
       .div(SEC_PER_WEEK)
@@ -76,8 +76,8 @@ export class Pool extends BaseAnchorAccount<PoolAccount> {
     decimals: number,
     numMints: number
   ) => {
-    const fundAmount = this.getFundAmount(amountPerWeek, decimals, numMints);
-    const denominator = new BN(10).pow(new BN(decimals));
+    const fundAmount = this.getFundAmount(amountPerWeek, 9, numMints);
+    const denominator = new BN(10).pow(new BN(9));
     return fundAmount.div(denominator);
   };
 }
