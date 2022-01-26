@@ -315,7 +315,7 @@ const ManagePoolPage = () => {
             </VStack>
           ) : (
             <VStack>
-              <Text fontFamily="T1">No staked trainers found</Text>
+              <Text fontFamily="T1" color="white">No staked trainers found</Text>
             </VStack>
           ))}
 
