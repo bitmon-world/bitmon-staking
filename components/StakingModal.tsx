@@ -48,7 +48,7 @@ const StakingModal = ({
                 src={selectedTrainer.staticData.image}
               />
               <Text fontWeight={"bold"}>{selectedTrainer.staticData.name}</Text>
-              <Text>{`Unstaking period: ${pool.unstakingPeriodDisplay}`}</Text>
+              <Text>Unstaking period: 7 days</Text>
             </VStack>
           )}
         </ModalBody>

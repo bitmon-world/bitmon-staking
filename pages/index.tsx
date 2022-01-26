@@ -185,7 +185,12 @@ const ManagePoolPage = () => {
   });
 
   const selectedUnstakeProof = useMemo(() => {
-    if (!unstakeProofAddresses || !unstakeProofs || !selectedTrainer) {
+    if (
+      !unstakeProofAddresses ||
+      !unstakeProofs ||
+      !selectedTrainer ||
+      selectedTab === PAGE_TABS.STAKE
+    ) {
       return;
     }
     const unstakeProofAddress =
