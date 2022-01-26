@@ -103,6 +103,7 @@ export class PoolManager extends BaseAnchorAccountManager<PoolAccount, Pool> {
     );
   };
 
+  // @ts-ignore
   toDomain = async (account: any, publicKey: PublicKey) => {
     const accountData = { ...account };
     return new Pool(publicKey, accountData);

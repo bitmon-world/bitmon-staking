@@ -180,8 +180,8 @@ const ManagePoolPage = () => {
   }, [anchorAccountCache.isEnabled, walletPublicKey?.toString()]);
 
   const claimRewardClickHandler = useTxCallback(_claimRewardClickHandler, {
-    info: "Claiming Vibe...",
-    success: "Vibe claimed!",
+    info: "Claiming BIT...",
+    success: "BIT claimed!",
     error: "Transaction failed",
   });
 
@@ -255,7 +255,7 @@ const ManagePoolPage = () => {
                 : "brandPink.200"
             }
           >
-            Claim Vibe
+            Claim BIT
           </Button>
         </HStack>
 
@@ -280,7 +280,7 @@ const ManagePoolPage = () => {
             </VStack>
           ) : (
             <VStack>
-              <Text fontFamily="T1">No monkettes found</Text>
+              <Text fontFamily="T1">No trainers found</Text>
             </VStack>
           ))}
 
@@ -315,7 +315,7 @@ const ManagePoolPage = () => {
             </VStack>
           ) : (
             <VStack>
-              <Text fontFamily="T1">No staked monkettes found</Text>
+              <Text fontFamily="T1">No staked trainers found</Text>
             </VStack>
           ))}
 
@@ -327,7 +327,7 @@ const ManagePoolPage = () => {
               borderBottom={"2px solid grey"}
             >
               <Text textAlign={"left"} fontSize="18" fontWeight={600}>
-                Monkettes Staked
+                Trainers Staked
               </Text>
               <Text textAlign={"right"} fontSize="18" fontWeight={600}>
                 {`${userAccount?.data.mintStakedCount.toString()}`}

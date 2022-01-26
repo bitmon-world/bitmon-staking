@@ -49,15 +49,9 @@ const AccountsCacheProvidersSetup = ({ children }: { children: ReactNode }) => {
   );
 };
 
-function VibeMarketApp({ Component, pageProps }: AppProps) {
+function TrainerStakingApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <link
-          href="https://solanamonkette.business/static/css/main.92f3fdef.chunk.css"
-          rel="stylesheet"
-        />
-      </Head>
       <ChakraProvider theme={theme}>
         <ClusterContextProvider>
           <WalletConnectionProvider>
@@ -73,4 +67,4 @@ function VibeMarketApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default VibeMarketApp;
+export default TrainerStakingApp;

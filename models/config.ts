@@ -1,6 +1,6 @@
 import _ from "lodash";
 import { PublicKey } from "@solana/web3.js";
-import { Program, BN } from "@project-serum/anchor";
+import { Program } from "@project-serum/anchor";
 import { BaseAnchorAccount, BaseAnchorAccountManager } from "./baseAnchor";
 
 export const AccountType = "config";
@@ -31,6 +31,7 @@ export class ConfigManager extends BaseAnchorAccountManager<
     );
   };
 
+  // @ts-ignore
   toDomain = async (account: any, publicKey: PublicKey) => {
     const accountData = { ...account };
     return new Config(publicKey, accountData);

@@ -21,14 +21,14 @@ export class BaseAnchorAccountManager<
     throw new Error("isValid not implemented");
   };
 
-  toDomain = (): any => {
+  toDomain = async (account: any, publicKey: PublicKey) => {
     throw new Error("toDomain not implemented");
   };
 
   transform = async (account: any, publicKey: PublicKey): Promise<T> => {
     let domainAccount: any;
     try {
-      domainAccount = await this.toDomain();
+      domainAccount = await this.toDomain(account, publicKey);
     } catch (err) {
       console.error(
         `Failed to transform account ${publicKey} of account type ${this.accountName}`

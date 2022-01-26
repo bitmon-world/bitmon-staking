@@ -25,6 +25,7 @@ export class MintStakedManager extends BaseAnchorAccountManager<
     return entity instanceof MintStaked && _.isArray(entity.data.mintAccounts);
   };
 
+  // @ts-ignore
   toDomain = async (account: any, publicKey: PublicKey) => {
     const accountData = { ...account };
     return new MintStaked(publicKey, accountData);

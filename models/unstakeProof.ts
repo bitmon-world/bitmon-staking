@@ -27,6 +27,7 @@ export class UnstakeProofManager extends BaseAnchorAccountManager<
     );
   };
 
+  // @ts-ignore
   toDomain = async (account: any, publicKey: PublicKey) => {
     const accountData = { ...account };
     return new UnstakeProof(publicKey, accountData);

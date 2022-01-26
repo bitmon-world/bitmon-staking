@@ -46,6 +46,7 @@ export class UserManager extends BaseAnchorAccountManager<UserAccount, User> {
     );
   };
 
+  // @ts-ignore
   toDomain = async (account: any, publicKey: PublicKey) => {
     const accountData = { ...account };
     return new User(publicKey, accountData);

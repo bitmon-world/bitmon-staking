@@ -126,7 +126,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
               src="/vibe-logo-lg.png"
               width={64}
               height={64}
-              alt="Vibe Logo"
+              alt="Bitmon Logo"
             />
           </Box>
         </Link>
