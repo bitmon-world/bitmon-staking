@@ -340,7 +340,7 @@ const ManagePoolPage = () => {
                   src={rewardToken.logoURI}
                 />
                 <Text textAlign={"left"} fontSize="18" fontWeight={600}>
-                  {`${rewardToken.name} claimed`}
+                  {`${rewardToken.name} Claimed`}
                 </Text>
               </HStack>
               <Text textAlign={"right"} fontSize="18" fontWeight={600}>
@@ -364,13 +364,13 @@ const ManagePoolPage = () => {
                   src={rewardToken.logoURI}
                 />
                 <Text textAlign={"left"} fontSize="18" fontWeight={600}>
-                  {`${rewardToken.name} available`}
+                  {`${rewardToken.name} Available`}
                 </Text>
               </HStack>
               <Text textAlign={"right"} fontSize="18" fontWeight={600}>
                 {`${userAccount.getRewardsToClaim(
                   pool.data.rewardRatePerToken,
-                  rewardToken.decimals
+                  9
                 )}`}
               </Text>
             </Flex>

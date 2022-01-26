@@ -85,7 +85,7 @@ export const AccountViewer = ({
       </Select>
       {account && closeAccountHandler && (
         <Button
-          colorScheme="red"
+          color="orange"
           mt="4"
           px="8"
           w="40"

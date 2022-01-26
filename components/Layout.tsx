@@ -214,7 +214,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
 
       <HStack spacing={{ base: "2", md: "6" }}>
         {isAdmin && (
-          <Badge fontSize="1em" colorScheme="red">
+          <Badge fontSize="1em" color="orange">
             ADMIN
           </Badge>
         )}

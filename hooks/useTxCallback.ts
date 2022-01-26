@@ -1,5 +1,5 @@
-import { useCallback, useRef } from "react";
-import { useToast, ToastId, UseToastOptions } from "@chakra-ui/react";
+import { useCallback } from "react";
+import { useToast } from "@chakra-ui/react";
 
 const useTxCallback = (
   fn: () => Promise<void> | undefined,

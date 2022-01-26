@@ -26,7 +26,7 @@ export class User extends BaseAnchorAccount<UserAccount> {
       .mul(elapsedTime)
       .div(U64_MAX)
       .add(this.data.rewardEarnedPending);
-    return rewardRaw.toNumber() / 10 ** decimals;
+    return (rewardRaw.toNumber() / 10 ** decimals).toFixed(4);
   };
 }
 
