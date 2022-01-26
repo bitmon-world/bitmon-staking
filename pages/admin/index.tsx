@@ -51,9 +51,9 @@ const ManagePoolPage = () => {
     );
   }, [pool, tokenAccounts]);
 
-  const [amountPerDay, setAmountPerDay] = useState(0);
+  const [amountPerWeek, setAmountPerWeek] = useState(0);
   const handleFundAmountChange = (valueAsString: string) => {
-    setAmountPerDay(Number(valueAsString));
+    setAmountPerWeek(Number(valueAsString));
   };
 
   const _fundPoolClickHandler = useCallback(async () => {
@@ -62,7 +62,7 @@ const ManagePoolPage = () => {
       !walletPublicKey ||
       !pool ||
       !rewardTokenAccount ||
-      !amountPerDay
+      !amountPerWeek
     ) {
       throw new Error("Invalid data");
     }
@@ -74,15 +74,15 @@ const ManagePoolPage = () => {
       pool.data.config,
       pool.data.rewardVault,
       rewardTokenAccount.publicKey,
-      amountPerDay
+        amountPerWeek
     );
-    setAmountPerDay(0);
+    setAmountPerWeek(0);
   }, [
     anchorAccountCache.isEnabled,
     walletPublicKey?.toString(),
     pool,
     rewardTokenAccount,
-    amountPerDay,
+    amountPerWeek,
   ]);
 
   const fundPoolClickHandler = useTxCallback(_fundPoolClickHandler, {
@@ -177,12 +177,12 @@ const ManagePoolPage = () => {
     }
     return pool
       .getFundAmountDisplay(
-        amountPerDay,
+        amountPerWeek,
         rewardMintInfo.decimals,
         config.data.numMint
       )
       .toString();
-  }, [pool, config, amountPerDay, rewardMintInfo]);
+  }, [pool, config, amountPerWeek, rewardMintInfo]);
 
   return (
     <VStack
@@ -211,10 +211,10 @@ const ManagePoolPage = () => {
           w="full"
           fontSize="16"
           textAlign={"left"}
-        >{`Number of tokens rewarded per NFT per day`}</Text>
+        >{`Number of tokens rewarded per NFT per week`}</Text>
         <NumberInput
           w="full"
-          value={amountPerDay}
+          value={amountPerWeek}
           defaultValue={0}
           min={0}
           onChange={handleFundAmountChange}
@@ -232,12 +232,12 @@ const ManagePoolPage = () => {
           }`}</Text>
         </Box>
         <Button
-          colorScheme="purple"
+          color="blue"
           mt="4"
           px="8"
           w="40"
           onClick={fundPoolClickHandler}
-          disabled={!rewardTokenAccount || !amountPerDay}
+          disabled={!rewardTokenAccount || !amountPerWeek}
         >
           Submit
         </Button>
@@ -253,7 +253,7 @@ const ManagePoolPage = () => {
           onChange={handleNewFunderAddressChange}
         />
         <Button
-          colorScheme="purple"
+          color="blue"
           mt="4"
           px="8"
           w="40"
@@ -274,7 +274,7 @@ const ManagePoolPage = () => {
           onChange={handleOldFunderAddressChange}
         />
         <Button
-          colorScheme="purple"
+          color="blue"
           mt="4"
           px="8"
           w="40"
