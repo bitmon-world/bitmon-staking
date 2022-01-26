@@ -73,6 +73,7 @@ export class TrainerAccount {
       return TrainerStakeStatus.STAKED;
     }
     const now = getNowBn();
+
     return unstakeTimestamp.add(unstakeDuration).gt(now)
       ? TrainerStakeStatus.PENDING
       : TrainerStakeStatus.WITHDRAW;

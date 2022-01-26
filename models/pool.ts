@@ -1,7 +1,6 @@
 import _ from "lodash";
 import { PublicKey } from "@solana/web3.js";
 import { Program, BN } from "@project-serum/anchor";
-import formatDuration from "date-fns/formatDuration";
 import { BaseAnchorAccount, BaseAnchorAccountManager } from "./baseAnchor";
 import { U64_MAX, SEC_PER_WEEK, getNowBn } from "../utils/bn";
 
@@ -34,15 +33,14 @@ export class Pool extends BaseAnchorAccount<PoolAccount> {
   }
 
   get unstakingPeriodDisplay() {
-    const unstakeDurationNum = this.data.unstakeDuration.toNumber();
-    const days = Math.floor(unstakeDurationNum / 24 / 60 / 60);
-    const hours = Math.floor(unstakeDurationNum / 60 / 60);
-    const minutes = Math.floor((unstakeDurationNum / 60) % 60);
-    const seconds = (unstakeDurationNum % 60) % 60;
-    return formatDuration(
-      { days, hours, minutes, seconds },
-      { format: ["days", "hours", "minutes", "seconds"] }
-    );
+    const d = this.data.unstakeDuration.toNumber();
+    let h = Math.floor(d / 3600);
+    let m = Math.floor(d % 3600 / 60);
+    let s = Math.floor(d % 3600 % 60);
+    let hDisplay = h > 0 ? h + (h === 1 ? " hour, " : " hours, ") : "";
+    let mDisplay = m > 0 ? m + (m === 1 ? " minute, " : " minutes, ") : "";
+    let sDisplay = s > 0 ? s + (s === 1 ? " second" : " seconds") : "";
+    return hDisplay + mDisplay + sDisplay;
   }
 
   getFundAmount = (
