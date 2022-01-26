@@ -176,7 +176,7 @@ const ManagePoolPage = () => {
       throw new Error("Invalid data");
     }
     await claimReward(anchorAccountCache, walletPublicKey);
-  }, [anchorAccountCache.isEnabled, walletPublicKey?.toString()]);
+  }, [anchorAccountCache, walletPublicKey]);
 
   const claimRewardClickHandler = useTxCallback(_claimRewardClickHandler, {
     info: "Claiming BIT...",
