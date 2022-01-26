@@ -38,7 +38,7 @@ export const useNftAccounts = (ownerPublicKey: PublicKey | undefined) => {
     return _.reduce(
       tokenAccounts,
       (accum: Record<string, HToken>, tokenAccount) => {
-        if (tokenAccount.data.amount === 1) {
+        if (tokenAccount.data.amount == 1) {
           accum[tokenAccount.publicKey.toString()] = tokenAccount;
         }
         return accum;
