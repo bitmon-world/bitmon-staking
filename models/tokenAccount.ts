@@ -62,7 +62,7 @@ export class HTokenManager extends BaseRawAccountManager<
 
     accountInfo.mint = new PublicKey(accountInfo.mint).toString();
     accountInfo.owner = new PublicKey(accountInfo.owner).toString();
-    accountInfo.amount = u64.fromBuffer(accountInfo.amount).toNumber();
+    accountInfo.amount = u64.fromBuffer(accountInfo.amount).toString();
 
     if (accountInfo.delegateOption === 0) {
       accountInfo.delegate = undefined;

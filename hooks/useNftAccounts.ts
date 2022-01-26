@@ -14,6 +14,7 @@ import { BITMON_MINTS } from "../constants/mints";
 
 export const useNftAccounts = (ownerPublicKey: PublicKey | undefined) => {
   const anchorAccountCache = useContext(AnchorAccountCacheContext);
+
   const [tokenAccounts, setTokenAccounts] = useState<
     Record<string, HToken> | undefined
   >();

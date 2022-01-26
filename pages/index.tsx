@@ -56,7 +56,6 @@ const ManagePoolPage = () => {
   // STAKE
   const nftAccounts = useNftAccounts(walletPublicKey);
   const trainersAccounts = useTrainersAccounts(nftAccounts);
-
   const [selectedTrainer, setSelectedTrainer] = useState<
     TrainerAccount | undefined
   >();

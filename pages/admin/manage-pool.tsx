@@ -74,7 +74,7 @@ const ManagePoolPage = () => {
       pool.data.config,
       pool.data.rewardVault,
       rewardTokenAccount.publicKey,
-        amountPerWeek
+      amountPerWeek
     );
     setAmountPerWeek(0);
   }, [

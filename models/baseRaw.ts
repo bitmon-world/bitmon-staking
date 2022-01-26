@@ -33,11 +33,11 @@ export class BaseRawAccountManager<
       );
       throw err;
     }
-    if (!this.isValid(domainAccount)) {
-      throw new Error(
-        `Account ${publicKey} of account type ${this.accountName} is invalid`
-      );
-    }
+    //if (!this.isValid(domainAccount)) {
+    //  throw new Error(
+    //    `Account ${publicKey} of account type ${this.accountName} is invalid`
+    //  );
+    //}
     return domainAccount;
   };
 
