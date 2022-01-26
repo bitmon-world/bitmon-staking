@@ -2,17 +2,13 @@ import { extendTheme } from "@chakra-ui/react";
 
 export const theme = extendTheme({
   colors: {
-    brandPurp: {
-      100: "#df00ff",
-      900: "#7f00ff",
-    },
-    brandPink: {
-      100: "#f399af",
-      200: "#e77da0",
-      900: "#b39eee",
-    },
-    brandBlue: {
-      100: "#a5d9ee",
-    },
+    blue: "#2C81C3",
+    "light-blue": "#73C4DA",
+    green: "#30BCA4",
+    "light-green": "#C8FECD",
+    grey: "#e0e0e0",
+    "light-orange": "#EB9441",
+    orange: "#E25C27",
+    purple: "#23172B",
   },
 });

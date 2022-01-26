@@ -214,45 +214,39 @@ const ManagePoolPage = () => {
         unstake={unstakeNftClickHandler}
       />
       <VStack w="full" spacing={16} textAlign="center">
-        <Heading color="brandPink.200" fontFamily="T1">
+        <Heading color="orange" fontFamily="T1">
           Trainer Staking!
         </Heading>
         <HStack spacing="8">
           <Button
             w="48"
-            color="white"
+            color="black"
             size={"md"}
             onClick={setSelectedTab.bind(null, PAGE_TABS.STAKE)}
             backgroundColor={
-              selectedTab === PAGE_TABS.STAKE
-                ? "brandPink.900"
-                : "brandPink.200"
+              selectedTab === PAGE_TABS.STAKE ? "light-green" : "green"
             }
           >
             My Trainers
           </Button>
           <Button
             w="48"
-            color="white"
+            color="black"
             size={"md"}
             onClick={setSelectedTab.bind(null, PAGE_TABS.UNSTAKE)}
             backgroundColor={
-              selectedTab === PAGE_TABS.UNSTAKE
-                ? "brandPink.900"
-                : "brandPink.200"
+              selectedTab === PAGE_TABS.UNSTAKE ? "light-green" : "green"
             }
           >
             Staked Trainers
           </Button>
           <Button
             w="48"
-            color="white"
+            color="black"
             size={"md"}
             onClick={setSelectedTab.bind(null, PAGE_TABS.CLAIM)}
             backgroundColor={
-              selectedTab === PAGE_TABS.CLAIM
-                ? "brandPink.900"
-                : "brandPink.200"
+              selectedTab === PAGE_TABS.CLAIM ? "light-green" : "green"
             }
           >
             Claim BIT

@@ -55,11 +55,11 @@ const StakingModal = ({
         <ModalFooter>
           <Center w="full">
             <Button
-              bgColor="brandPink.200"
-              color="white"
+              bgColor="green"
+              color="black"
               mr={3}
               _hover={{
-                bgColor: "brandPink.900",
+                bgColor: "light-green",
               }}
               onClick={onSubmit}
             >

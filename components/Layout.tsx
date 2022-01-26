@@ -103,7 +103,7 @@ interface SidebarProps extends BoxProps {
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   return (
     <Box
-      bg={useColorModeValue("brandPink.200", "gray.900")}
+      bg={useColorModeValue("green", "light-green")}
       borderRight="1px"
       borderRightColor={useColorModeValue("gray.200", "gray.700")}
       w={{ base: "full", md: "25%", lg: "20%", xl: "15%" }}
@@ -122,12 +122,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       >
         <Link href="/" passHref>
           <Box h="64px" w="64px" cursor="pointer">
-            <Image
-              src="/vibe-logo-lg.png"
-              width={64}
-              height={64}
-              alt="Bitmon Logo"
-            />
+            <Image src="/logo.png" width={64} height={64} alt="Bitmon Logo" />
           </Box>
         </Link>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
@@ -171,9 +166,9 @@ const NavItem = ({ href, icon, children, ...rest }: NavItemProps) => {
         role="group"
         cursor="pointer"
         fontWeight="900"
-        color="white"
+        color="black"
         _hover={{
-          color: "brandPink.900",
+          color: "light-green",
         }}
         {...rest}
       >
@@ -182,7 +177,7 @@ const NavItem = ({ href, icon, children, ...rest }: NavItemProps) => {
             mr="4"
             fontSize="16"
             _groupHover={{
-              color: "brandPink.900",
+              color: "light-green",
             }}
             as={icon}
           />
@@ -204,7 +199,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       px={{ base: 4, md: 4 }}
       height="20"
       alignItems="center"
-      bg={useColorModeValue("brandBlue.100", "gray.900")}
+      bg={"blue"}
       borderBottomWidth="1px"
       borderBottomColor={useColorModeValue("gray.200", "gray.700")}
       justifyContent={{ base: "space-between", md: "flex-end" }}

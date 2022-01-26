@@ -13,23 +13,23 @@ const StakeStatusText = ({
   let color: string;
   switch (stakeStatus) {
     case TrainerStakeStatus.UNSTAKED:
-      color = "brandPink.900";
+      color = "blue";
       text = "Unstaked";
       break;
     case TrainerStakeStatus.STAKED:
-      color = "green.500";
+      color = "green";
       text = "Staked";
       break;
     case TrainerStakeStatus.PENDING:
-      color = "yellow.500";
+      color = "orange";
       text = "Unstaking...";
       break;
     case TrainerStakeStatus.WITHDRAW:
-      color = "red.500";
+      color = "blue";
       text = "Withdrawable";
       break;
     default:
-      color = "gray.500";
+      color = "light-green";
       text = "...";
       break;
   }

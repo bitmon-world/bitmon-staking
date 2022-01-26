@@ -51,9 +51,9 @@ const ManagePoolPage = () => {
     );
   }, [pool, tokenAccounts]);
 
-  const [amountPerWeek, setAmountPerWeek] = useState(0);
+  const [amountPerDay, setAmountPerDay] = useState(0);
   const handleFundAmountChange = (valueAsString: string) => {
-    setAmountPerWeek(Number(valueAsString));
+    setAmountPerDay(Number(valueAsString));
   };
 
   const _fundPoolClickHandler = useCallback(async () => {
@@ -62,7 +62,7 @@ const ManagePoolPage = () => {
       !walletPublicKey ||
       !pool ||
       !rewardTokenAccount ||
-      !amountPerWeek
+      !amountPerDay
     ) {
       throw new Error("Invalid data");
     }
@@ -74,15 +74,15 @@ const ManagePoolPage = () => {
       pool.data.config,
       pool.data.rewardVault,
       rewardTokenAccount.publicKey,
-      amountPerWeek
+      amountPerDay
     );
-    setAmountPerWeek(0);
+    setAmountPerDay(0);
   }, [
     anchorAccountCache.isEnabled,
     walletPublicKey?.toString(),
     pool,
     rewardTokenAccount,
-    amountPerWeek,
+    amountPerDay,
   ]);
 
   const fundPoolClickHandler = useTxCallback(_fundPoolClickHandler, {
@@ -177,12 +177,12 @@ const ManagePoolPage = () => {
     }
     return pool
       .getFundAmountDisplay(
-        amountPerWeek,
+        amountPerDay,
         rewardMintInfo.decimals,
         config.data.numMint
       )
       .toString();
-  }, [pool, config, amountPerWeek, rewardMintInfo]);
+  }, [pool, config, amountPerDay, rewardMintInfo]);
 
   return (
     <VStack
@@ -211,10 +211,10 @@ const ManagePoolPage = () => {
           w="full"
           fontSize="16"
           textAlign={"left"}
-        >{`Number of tokens rewarded per NFT per week`}</Text>
+        >{`Number of tokens rewarded per NFT per day`}</Text>
         <NumberInput
           w="full"
-          value={amountPerWeek}
+          value={amountPerDay}
           defaultValue={0}
           min={0}
           onChange={handleFundAmountChange}
@@ -237,7 +237,7 @@ const ManagePoolPage = () => {
           px="8"
           w="40"
           onClick={fundPoolClickHandler}
-          disabled={!rewardTokenAccount || !amountPerWeek}
+          disabled={!rewardTokenAccount || !amountPerDay}
         >
           Submit
         </Button>
