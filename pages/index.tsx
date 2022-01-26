@@ -213,7 +213,7 @@ const ManagePoolPage = () => {
         unstake={unstakeNftClickHandler}
       />
       <VStack w="full" spacing={16} textAlign="center">
-        <Heading color="orange" fontFamily="T1">
+        <Heading color="white" fontFamily="T1">
           Trainer Staking!
         </Heading>
         <HStack spacing="8">
@@ -255,7 +255,7 @@ const ManagePoolPage = () => {
         {selectedTab === PAGE_TABS.STAKE &&
           (walletPublicKey && pool && trainersAccounts ? (
             <VStack>
-              <Text>(Click to stake)</Text>
+              <Text color="white">(Click to stake)</Text>
               <Center w="120" flexWrap={"wrap"}>
                 {_.map(trainersAccounts, (trainerAccount, key) => {
                   return (
@@ -273,14 +273,16 @@ const ManagePoolPage = () => {
             </VStack>
           ) : (
             <VStack>
-              <Text fontFamily="T1">No trainers found</Text>
+              <Text fontFamily="T1" color="white">
+                No trainers found
+              </Text>
             </VStack>
           ))}
 
         {selectedTab === PAGE_TABS.UNSTAKE &&
           (walletPublicKey && pool && userAccount && stakedTrainersAccounts ? (
             <VStack>
-              <Text>(Click to unstake)</Text>
+              <Text color="white">(Click to unstake)</Text>
               <Center w="120" flexWrap={"wrap"}>
                 {_.map(stakedTrainersAccounts, (trainerAccount, key) => {
                   let unstakeProof: UnstakeProof | undefined;
@@ -314,11 +316,7 @@ const ManagePoolPage = () => {
 
         {selectedTab === PAGE_TABS.CLAIM && userAccount && pool && rewardToken && (
           <VStack w="96" spacing={8}>
-            <Flex
-              w="full"
-              justifyContent="space-between"
-              borderBottom={"2px solid grey"}
-            >
+            <Flex w="full" color="white" justifyContent="space-between">
               <Text textAlign={"left"} fontSize="18" fontWeight={600}>
                 Trainers Staked
               </Text>
@@ -326,11 +324,7 @@ const ManagePoolPage = () => {
                 {`${userAccount?.data.mintStakedCount.toString()}`}
               </Text>
             </Flex>
-            <Flex
-              w="full"
-              justifyContent="space-between"
-              borderBottom={"2px solid grey"}
-            >
+            <Flex w="full" color="white" justifyContent="space-between">
               <HStack>
                 <Image
                   alt="token image"
@@ -350,11 +344,7 @@ const ManagePoolPage = () => {
                 )}`}
               </Text>
             </Flex>
-            <Flex
-              w="full"
-              justifyContent="space-between"
-              borderBottom={"2px solid grey"}
-            >
+            <Flex w="full" color="white" justifyContent="space-between">
               <HStack>
                 <Image
                   alt="token image"

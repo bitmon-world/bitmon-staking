@@ -2,8 +2,7 @@ import _ from "lodash";
 import { PublicKey } from "@solana/web3.js";
 import useWalletPublicKey from "../hooks/useWalletPublicKey";
 import { useAccount } from "./useAccounts";
-import { useEffect, useMemo } from "react";
-import { useAnchorAccountCache } from "../contexts/AnchorAccountsCacheProvider";
+import { useMemo } from "react";
 
 export function useIsAdmin(poolAddress: PublicKey) {
   const walletPublicKey = useWalletPublicKey();

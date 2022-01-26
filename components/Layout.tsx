@@ -48,7 +48,7 @@ export default function SidebarWithHeader({
   const isAdmin = useIsAdmin(ADDRESS_STAKING_POOL);
 
   return (
-    <Box minH="100vh" bg={useColorModeValue("orange.50", "gray.900")}>
+    <Box minH="100vh" bg={useColorModeValue("blue", "white")}>
       {isAdmin && (
         <>
           <SidebarContent
@@ -86,7 +86,7 @@ export default function SidebarWithHeader({
         pb="40"
         h="full"
         position="fixed"
-        backgroundColor={useColorModeValue("orange.50", "gray.700")}
+        backgroundColor={useColorModeValue("blue", "white")}
         overflow="auto"
       >
         {children}
@@ -104,7 +104,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     <Box
       bg={useColorModeValue("green", "light-green")}
       borderRight="1px"
-      borderRightColor={useColorModeValue("gray.200", "gray.700")}
+      borderRightColor={"white"}
       w={{ base: "full", md: "25%", lg: "20%", xl: "15%" }}
       pos="fixed"
       h="full"
@@ -200,7 +200,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       alignItems="center"
       bg={"blue"}
       borderBottomWidth="1px"
-      borderBottomColor={useColorModeValue("gray.200", "gray.700")}
+      borderBottomColor={"white"}
       justifyContent={{ base: "space-between", md: "flex-end" }}
       {...rest}
     >

@@ -31,7 +31,7 @@ const StakingModal = ({
   return (
     <Modal isOpen={isOpen} size="sm" onClose={onClose}>
       <ModalOverlay />
-      <ModalContent backgroundColor={"gray.100"}>
+      <ModalContent backgroundColor={"white"}>
         <ModalHeader>
           <Center>Stake Trainer</Center>
         </ModalHeader>

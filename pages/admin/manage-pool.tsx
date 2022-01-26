@@ -176,18 +176,14 @@ const ManagePoolPage = () => {
       return "...";
     }
     return pool
-      .getFundAmountDisplay(
-        amountPerWeek,
-        9,
-        config.data.numMint
-      )
+      .getFundAmountDisplay(amountPerWeek, 9, config.data.numMint)
       .toString();
   }, [pool, config, amountPerWeek, rewardMintInfo]);
 
   return (
     <VStack
       w="full"
-      divider={<StackDivider borderColor="gray.200" />}
+      divider={<StackDivider borderColor="blue" />}
       spacing={16}
       textAlign="center"
     >
