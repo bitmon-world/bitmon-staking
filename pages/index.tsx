@@ -260,6 +260,19 @@ const ManagePoolPage = () => {
         {selectedTab === PAGE_TABS.STAKE &&
           (walletPublicKey && pool && trainersAccounts ? (
             <VStack>
+              <VStack background="white">
+                <Text color="red" padding="10px">
+                  <p>
+                    <b>Staking your Trainer will lock them to receive $BIT.</b>
+                  </p>
+                  <p>
+                    <b>
+                      You won't be able to use them until you unstake them and
+                      wait for a 7 days lock period.
+                    </b>
+                  </p>
+                </Text>
+              </VStack>
               <Text color="white">(Click to stake)</Text>
               <Center w="120" flexWrap={"wrap"}>
                 {_.map(trainersAccounts, (trainerAccount, key) => {
@@ -287,6 +300,22 @@ const ManagePoolPage = () => {
         {selectedTab === PAGE_TABS.UNSTAKE &&
           (walletPublicKey && pool && userAccount && stakedTrainersAccounts ? (
             <VStack>
+              <VStack background="white">
+                <Text color="red" padding="10px">
+                  <p>
+                    <b>
+                      Unstaking your Trainer will result in a lock period of 7
+                      days without receiving $BIT.{" "}
+                    </b>
+                  </p>
+                  <p>
+                    <b>
+                      You will be able to unlock your trainer after 7 days you
+                      put them to unstake.
+                    </b>
+                  </p>
+                </Text>
+              </VStack>
               <Text color="white">(Click to unstake)</Text>
               <Center w="120" flexWrap={"wrap"}>
                 {_.map(stakedTrainersAccounts, (trainerAccount, key) => {
@@ -315,7 +344,9 @@ const ManagePoolPage = () => {
             </VStack>
           ) : (
             <VStack>
-              <Text fontFamily="T1" color="white">No staked trainers found</Text>
+              <Text fontFamily="T1" color="white">
+                No staked trainers found
+              </Text>
             </VStack>
           ))}
 
