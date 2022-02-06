@@ -4,7 +4,6 @@ import { TrainerAccount, TrainerStakeStatus } from "../hooks/useNftAccounts";
 import { Pool } from "../models/pool";
 import { UnstakeProof } from "../models/unstakeProof";
 import { getNowBn } from "../utils/bn";
-import BN from "bn.js";
 
 const StakeStatusText = ({
   stakeStatus,

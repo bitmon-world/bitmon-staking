@@ -267,8 +267,8 @@ const ManagePoolPage = () => {
                   </p>
                   <p>
                     <b>
-                      You won&apos;t be able to use them until you unstake them and
-                      wait for a 7 days lock period.
+                      You won&apos;t be able to use them until you unstake them
+                      and wait for a 7 days lock period.
                     </b>
                   </p>
                 </Text>
